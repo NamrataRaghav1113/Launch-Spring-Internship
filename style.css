@@ -1,0 +1,112 @@
+/* --------------------------------------------------
+ * 1. Theme Variables (CSS Custom Properties)
+ * -------------------------------------------------- */
+
+/* Default: Dark Theme */
+:root {
+    /* Backgrounds */
+    --color-bg-primary: #1e1e2d;
+    /* Primary Dark Blue/Gray */
+    --color-bg-secondary: #27293b;
+    /* Secondary Dark Blue/Gray (Card/Sidebar) */
+    --color-bg-hover: #35384e;
+    /* Darker Hover State */
+    --color-input-bg: #1e1e2d;
+    /* Input Background same as primary for depth */
+
+    /* Text */
+    --color-text-primary: #f8f8f2;
+    /* White/Light Text */
+    --color-text-subtle: #b4b4c4;
+    /* Subtitle/Hint Text */
+
+    /* Accents & Borders */
+    --color-accent: #657de6;
+    /* Vibrant Indigo/Blue */
+    --color-accent-text: #ffffff;
+    /* White text on accent */
+    --color-border: #3b3e56;
+    /* Dark Border */
+    --color-input-border: #4d5069;
+    /* Input Border */
+    --color-slider-track: #4d5069;
+    /* Slider Track */
+
+    /* Tags */
+    --color-tag-bg: #4d5069;
+    --color-tag-text: #f8f8f2;
+}
+
+/* Light Theme Override */
+.light-theme {
+    /* Backgrounds */
+    --color-bg-primary: #ffffff;
+    /* White */
+    --color-bg-secondary: #f3f4f6;
+    /* Very Light Gray (Card/Sidebar) */
+    --color-bg-hover: #e5e7eb;
+    /* Lighter Hover State */
+    --color-input-bg: #ffffff;
+
+    /* Text */
+    --color-text-primary: #1f2937;
+    /* Dark Gray Text */
+    --color-text-subtle: #6b7280;
+    /* Medium Gray Subtitle/Hint Text */
+
+    /* Accents & Borders */
+    --color-accent: #4f46e5;
+    /* Primary Indigo/Blue */
+    --color-accent-text: #ffffff;
+    --color-border: #d1d5db;
+    /* Light Border */
+    --color-input-border: #d1d5db;
+    --color-slider-track: #d1d5db;
+
+    /* Tags */
+    --color-tag-bg: #e0e7ff;
+    /* Light Blue Tag */
+    --color-tag-text: #3730a3;
+    /* Dark Blue Tag Text */
+}
+
+/* --------------------------------------------------
+ * 2. Tailwind Base Overrides (using variables)
+ * -------------------------------------------------- */
+
+body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+
+/* Border color for main header */
+#main-header {
+    border-color: var(--color-border);
+}
+
+/* --------------------------------------------------
+ * 3. Custom Slider Styling (using variables)
+ * -------------------------------------------------- */
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    /* Use CSS variable for the thumb color */
+    background: var(--color-accent);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-top: -7px;
+    /* Adjusted to center thumb on the track */
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}

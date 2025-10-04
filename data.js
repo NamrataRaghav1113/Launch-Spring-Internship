@@ -1,0 +1,11 @@
+/**
+ * Contains all project data. By embedding this in a JS file,
+ * we avoid the asynchronous fetch() request that fails on file:// protocol.
+ */
+const PROJECT_DATA = [
+    { "id": 1, "title": "Tailwind UI Refresh for SaaS Landing Page", "client": "Innovate Solutions LLC", "category": "Web Development", "budget": 2500, "description": "Seeking an experienced React developer to refresh our main SaaS landing page using the latest Tailwind CSS practices. Focus on performance and full mobile responsiveness.", "tags": ["React", "Tailwind CSS", "UI/UX"], "datePosted": "2025-09-28" },
+    { "id": 2, "title": "Logo Design and Brand Guideline Creation", "client": "Coffee Roasters Inc.", "category": "Design", "budget": 800, "description": "Need a modern, minimalist logo and a complete set of brand guidelines, including color palette, typography, and usage rules for both print and digital media.", "tags": ["Logo Design", "Branding", "Illustrator"], "datePosted": "2025-09-29" },
+    { "id": 3, "title": "Mobile App Backend Development (Node.js)", "client": "HealthTech Start-up", "category": "Backend Development", "budget": 5500, "description": "Develop a secure, scalable Node.js backend with MongoDB integration for a new health and fitness tracking mobile application. Experience with HIPAA compliance preferred.", "tags": ["Node.js", "MongoDB", "API", "Security"], "datePosted": "2025-10-01" },
+    { "id": 4, "title": "Content Writer for Tech Blog (5 Articles)", "client": "Software Review Corp.", "category": "Writing", "budget": 900, "description": "Looking for a technical content writer to produce five in-depth articles on DevOps tools. Must be able to explain complex topics clearly and engage readers.", "tags": ["Technical Writing", "DevOps", "Content"], "datePosted": "2025-09-25" },
+    { "id": 5, "title": "Data Analysis and Visualization (Python/Pandas)", "client": "E-commerce Insights", "category": "Data Science", "budget": 3200, "description": "Perform data cleaning, analysis, and visualization on large e-commerce transaction datasets using Python (Pandas/Matplotlib/Seaborn). Deliverable is a detailed report and interactive dashboards.", "tags": ["Python", "Data Analysis", "Pandas", "Visualization"], "datePosted": "2025-09-30" }
+];
