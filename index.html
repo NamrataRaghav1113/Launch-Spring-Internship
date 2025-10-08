@@ -1,452 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelancer Messages</title>
-    <!-- Load Tailwind CSS -->
+    <title>TaskNova - Home Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Custom styles for specific layout needs */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Define the chat window height relative to the viewport height */
-        #chat-app-container {
-            height: 90vh; 
-            max-width: 1280px;
+        /* Optional: Smooth scroll for internal links */
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Hide scrollbar for aesthetics, but allow scrolling */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        /* Adjust for fixed navigation to prevent content overlap */
+        section {
+            padding-top: 100px;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+
+        /* Hero section needs full viewport height adjustment */
+        .hero-section {
+            min-height: calc(100vh - 80px);
+            /* Adjust based on header height */
         }
     </style>
 </head>
-<body class="bg-gray-100 p-4 sm:p-6 flex justify-center min-h-screen">
 
-    <div id="chat-app-container" class="w-full flex flex-col rounded-2xl shadow-2xl overflow-hidden bg-white">
+<body class="min-h-screen font-sans transition-colors duration-500">
 
-        <!-- Header -->
-        <header class="p-4 bg-white border-b sticky top-0 z-20">
-            <h1 class="text-2xl font-extrabold text-indigo-700">
-                <span class="text-gray-900">Marketplace /</span> Messages
-            </h1>
-        </header>
+    <div id="app" class="max-w-7xl mx-auto">
 
-        <!-- Main Chat Area -->
-        <div class="flex flex-1 min-h-0">
-            
-            <!-- Conversation List (Sidebar) -->
-            <div id="conversation-list" class="flex flex-col w-full md:w-80 border-r overflow-y-auto no-scrollbar transition-all duration-300 ease-in-out">
-                <div class="p-4 border-b bg-white sticky top-0">
-                    <h2 class="text-xl font-bold text-gray-800">Inboxes (<span id="inbox-count">0</span>)</h2>
+        <nav id="main-nav"
+            class="fixed top-0 left-0 w-full z-50 transition-colors duration-500 
+                                bg-[var(--color-bg-secondary)] border-b border-[var(--color-border)] shadow-lg p-4 sm:p-6">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-extrabold flex items-center text-[var(--color-text-primary)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                        class="mr-2 text-[var(--color-accent)]">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="m9 12 2 2 4-4" />
+                    </svg>
+                    TaskNova
+                </a>
+
+                <ul class="flex space-x-6 items-center text-[var(--color-text-primary)] text-sm font-medium">
+                    <li><a href="index.html" class="text-[var(--color-accent)] font-bold">Home</a></li>
+                    <li><a href="marketplace.html"
+                            class="hover:text-[var(--color-accent)] transition-colors duration-200">Projects</a></li>
+                            <li><a href="freelancer-profile.html"
+                                    class="hover:text-[var(--color-accent)] transition-colors duration-200">profile</a></li>
+                    <li><a href="freelancer-dashboard.html"
+                            class="hover:text-[var(--color-accent)] transition-colors duration-200">Dashboard</a></li>
+                    <li><a href="setting.html"
+                            class="hover:text-[var(--color-accent)] transition-colors duration-200">Setting</a></li>
+                    <li>
+                        <button id="theme-toggle-btn"
+                            class="p-2 rounded-full transition-colors duration-300 hover:bg-[var(--color-bg-hover)]">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="home-hero" class="hero-section flex items-center justify-center p-8 text-center"
+            style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1600/900?blur=5') center/cover no-repeat; margin-top: 80px;">
+            <div class="max-w-4xl text-white">
+                <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 animate-fadeInDown">
+                    Your Success Starts Here.
+                </h1>
+                <p class="text-xl sm:text-2xl mb-8 font-light animate-fadeInUp">
+                    Find the perfect project or the right talent, focusing on simplicity and efficiency.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="marketplace.html"
+                        class="px-8 py-3 rounded-lg font-bold text-lg 
+                            bg-[var(--color-accent)] text-[var(--color-accent-text)] hover:opacity-90 transition-opacity shadow-xl">
+                        Browse Projects
+                    </a>
+                    <a href="#"
+                        class="px-8 py-3 rounded-lg font-bold text-lg 
+                            bg-white text-gray-900 border border-gray-300 hover:bg-gray-100 transition-colors shadow-xl">
+                        Become a Freelancer
+                    </a>
                 </div>
-                <!-- Conversation items will be injected here -->
-                <div id="conversation-items"></div>
+            </div>
+        </section>
+
+        <section id="highlights" class="p-8 sm:p-16 bg-[var(--color-bg-primary)]">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--color-text-primary)]">
+                Why Choose TaskNova?
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <div
+                    class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="mx-auto mb-4 text-[var(--color-accent)]">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                        <line x1="4" x2="4" y1="22" y2="15" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-3 text-[var(--color-text-primary)]">Streamlined Workflow</h3>
+                    [cite_start]<p class="text-[var(--color-text-subtle)]">Our intuitive dashboards simplify project
+                        management and proposal tracking, as noted in the project goal[cite: 7].</p>
+                </div>
+
+                <div
+                    class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="mx-auto mb-4 text-[var(--color-accent)]">
+                        <path d="M12 5V2L7 7l5 5V9" />
+                        <path d="M12 19v3l5-5-5-5v4" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-3 text-[var(--color-text-primary)]">No Overwhelm</h3>
+                    [cite_start]<p class="text-[var(--color-text-subtle)]">Designed to avoid the complexity of existing
+                        platforms, focusing on an engaging UI/UX[cite: 5, 7].</p>
+                </div>
+
+                <div
+                    class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="mx-auto mb-4 text-[var(--color-accent)]">
+                        <path d="M22 10s-5.4-4-10-4-10 4-10 4-1.6 7 10 7 10-7 10-7Z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-3 text-[var(--color-text-primary)]">Role-Based Experience</h3>
+                    [cite_start]<p class="text-[var(--color-text-subtle)]">Dedicated dashboards for Clients and
+                        Freelancers ensure relevant project management tools[cite: 7, 19].</p>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact"
+            class="p-8 sm:p-16 text-center bg-[var(--color-bg-secondary)] border-t border-[var(--color-border)]">
+            <h2 class="text-3xl font-bold mb-4 text-[var(--color-text-primary)]">Ready to Get Started?</h2>
+            <p class="text-lg mb-8 text-[var(--color-text-subtle)]">Join the TaskNova community today and move closer to
+                your project goals.</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="marketplace.html"
+                    class="px-8 py-3 rounded-lg font-bold text-lg 
+                        bg-[var(--color-accent)] text-[var(--color-accent-text)] hover:opacity-90 transition-opacity shadow-xl">
+                    Find Work Now
+                </a>
+                <a href="#"
+                    class="px-8 py-3 rounded-lg font-bold text-lg 
+                        border border-[var(--color-input-border)] text-[var(--color-text-primary)] hover:bg-[var(--color-bg-hover)] transition-colors">
+                    Register Client Account
+                </a>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+               
             </div>
 
-            <!-- Chat Window -->
-            <div id="chat-window-container" class="flex-1 min-w-0 flex flex-col transition-all duration-300 ease-in-out hidden md:flex">
-                <!-- Chat window content will be injected here (or placeholder shown) -->
-            </div>
+            <p class="mt-16 text-sm text-[var(--color-text-subtle)]">&copy; 2025 TaskNova. All rights reserved.</p>
+        </footer>
 
-        </div>
     </div>
 
+    <script src="config.js"></script>
+    <script src="data.js"></script>
+    <script src="marketplace.js"></script>
+
     <script>
-        // --- MOCK DATA ---
-        const MOCK_USERS = {
-            'current_user_id': { name: 'Freelancer Me (You)', avatar: 'FM', role: 'Freelancer', color: 'bg-indigo-600' },
-            'client_1': { name: 'ClientCorp Inc.', avatar: 'CC', role: 'Client', color: 'bg-teal-500' },
-            'client_2': { name: 'Startup Innovator', avatar: 'SI', role: 'Client', color: 'bg-amber-500' },
-            'admin_support': { name: 'Marketplace Support', avatar: 'MS', role: 'Admin', color: 'bg-red-500' },
-        };
-
-        let conversations = [
-            {
-                id: 1,
-                withUser: 'client_1',
-                lastMessage: 'The project is ready to launch on Monday!',
-                lastTime: '10:30 AM',
-                unread: 2,
-                projectId: 'PRJ-402',
-                topic: 'Website Redesign',
-                messages: [
-                    { senderId: 'client_1', text: 'Hi, can we discuss the final deliverables for the redesign?', time: '9:50 AM' },
-                    { senderId: 'current_user_id', text: 'Absolutely! I have the final files ready. Do you have 10 minutes now?', time: '10:00 AM' },
-                    { senderId: 'client_1', text: 'Yes. Also, I updated the project scope with a small final task.', time: '10:15 AM' },
-                    { senderId: 'client_1', text: 'The project is ready to launch on Monday!', time: '10:30 AM' },
-                ],
-            },
-            {
-                id: 2,
-                withUser: 'client_2',
-                lastMessage: 'I need a quick quote for the new feature.',
-                lastTime: 'Yesterday',
-                unread: 0,
-                projectId: 'PRJ-511',
-                topic: 'Mobile App Feature',
-                messages: [
-                    { senderId: 'client_2', text: 'Hello, are you available for a new consultation?', time: 'Yesterday 3:00 PM' },
-                    { senderId: 'current_user_id', text: 'Yes, just finishing up a task. What did you have in mind?', time: 'Yesterday 3:15 PM' },
-                    { senderId: 'client_2', text: 'I need a quick quote for the new feature.', time: 'Yesterday 3:30 PM' },
-                ],
-            },
-            {
-                id: 3,
-                withUser: 'admin_support',
-                lastMessage: 'Your payment for PRJ-101 has been successfully processed.',
-                lastTime: '1 Week Ago',
-                unread: 0,
-                projectId: 'SYS-001',
-                topic: 'Account Support',
-                messages: [
-                    { senderId: 'admin_support', text: 'Welcome to the marketplace! We are here to assist you.', time: '2 Weeks Ago' },
-                    { senderId: 'admin_support', text: 'Your payment for PRJ-101 has been successfully processed.', time: '1 Week Ago' },
-                ],
-            },
-        ];
-
-        let selectedConversationId = null;
-
-        // --- UTILITY FUNCTIONS ---
-
-        /**
-         * Generates the HTML for a user avatar.
-         * @param {object} user - User object from MOCK_USERS.
-         */
-        function generateUserAvatarHtml(user) {
-            return `
-                <div
-                    class="w-10 h-10 ${user.color || 'bg-gray-400'} text-white font-semibold flex items-center justify-center rounded-full flex-shrink-0 shadow-md"
-                    title="${user.name}"
-                >
-                    ${user.avatar}
-                </div>
-            `;
-        }
-
-        /**
-         * Renders the list of conversations in the sidebar.
-         */
-        function renderConversationList() {
-            const listContainer = document.getElementById('conversation-items');
-            const inboxCount = document.getElementById('inbox-count');
-            listContainer.innerHTML = '';
-            inboxCount.textContent = conversations.length;
-
-            conversations.forEach(conv => {
-                const user = MOCK_USERS[conv.withUser];
-                const selectedClass = conv.id === selectedConversationId ? 'bg-indigo-100 border-indigo-600 shadow-inner' : '';
-                const unreadClass = conv.unread > 0 ? 'bg-indigo-50 border-indigo-400 font-semibold hover:bg-indigo-100' : 'hover:bg-gray-50';
-                
-                const listItem = document.createElement('div');
-                listItem.dataset.convId = conv.id;
-                listItem.className = `flex items-center p-3 cursor-pointer transition-all duration-150 border-l-4 border-transparent ${selectedClass || unreadClass}`;
-                listItem.onclick = () => selectConversation(conv.id);
-
-                listItem.innerHTML = `
-                    ${generateUserAvatarHtml(user)}
-                    <div class="ml-3 flex-1 min-w-0">
-                        <div class="flex justify-between items-start">
-                            <p class="text-sm truncate text-gray-900">${user.name}</p>
-                            <span class="text-xs text-gray-500 flex-shrink-0 ml-2">${conv.lastTime}</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-0.5">
-                            <p class="text-xs truncate ${conv.unread > 0 ? 'text-gray-800' : 'text-gray-500'}">
-                                ${conv.lastMessage}
-                            </p>
-                            ${conv.unread > 0 ? `<span class="ml-2 px-2 py-0.5 bg-indigo-600 text-white text-xs font-bold rounded-full">${conv.unread}</span>` : ''}
-                        </div>
-                    </div>
-                `;
-                listContainer.appendChild(listItem);
-            });
-
-            if (conversations.length === 0) {
-                listContainer.innerHTML = '<p class="p-4 text-center text-gray-500 text-sm italic">No active conversations.</p>';
+        // Simple JS to ensure the theme toggle initializes correctly on the home page
+        // The main initialize() function in marketplace.js should handle theme application.
+        window.addEventListener('load', () => {
+            // Re-initialize if marketplace.js doesn't auto-run or if you use a different script for the home page
+            if (typeof initialize === 'function') {
+                initialize();
             }
-        }
-
-        /**
-         * Renders a single message bubble.
-         */
-        function generateMessageBubbleHtml(message) {
-            const isMe = message.senderId === 'current_user_id';
-            const user = MOCK_USERS[message.senderId];
-
-            const alignmentClass = isMe ? 'justify-end' : 'justify-start';
-            const bubbleColor = isMe ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-800';
-            const bubbleShape = isMe ? 'rounded-br-none' : 'rounded-tl-none';
-            const marginClass = isMe ? 'ml-auto' : 'mr-auto';
-            const textAlignment = isMe ? 'text-right' : 'text-left';
-
-            return `
-                <div class="flex w-full ${alignmentClass} mb-4">
-                    ${!isMe ? generateUserAvatarHtml(user) : ''}
-                    <div class="max-w-xs md:max-w-md lg:max-w-lg mx-2 flex flex-col">
-                        ${!isMe ? `<p class="text-xs font-semibold text-gray-600 mb-0.5">${user.name}</p>` : ''}
-                        <div class="p-3 shadow-md rounded-xl ${bubbleColor} ${bubbleShape} ${marginClass}">
-                            <p class="text-sm whitespace-pre-wrap">${message.text}</p>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1 ${textAlignment}">
-                            ${message.time}
-                        </span>
-                    </div>
-                    ${isMe ? generateUserAvatarHtml(user) : ''}
-                </div>
-            `;
-        }
-
-        /**
-         * Renders the full chat window for the selected conversation.
-         */
-        function renderChatWindow(conv) {
-            const container = document.getElementById('chat-window-container');
-            const recipient = MOCK_USERS[conv.withUser];
-
-            container.classList.remove('hidden');
-
-            container.innerHTML = `
-                <div class="flex flex-col h-full bg-white">
-                    <!-- Chat Header -->
-                    <div class="flex items-center justify-between p-4 border-b bg-white sticky top-0 z-10 shadow-sm">
-                        <button id="back-to-list-btn" 
-                            class="md:hidden p-2 text-indigo-600 hover:text-indigo-800 rounded-full transition-colors"
-                            title="Back to conversations">
-                            <!-- Back Arrow SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                            </svg>
-                        </button>
-                        <div class="flex items-center">
-                            ${generateUserAvatarHtml(recipient)}
-                            <div class="ml-3">
-                                <h2 class="text-lg font-bold text-gray-900">${recipient.name}</h2>
-                                <p class="text-xs text-gray-500 flex items-center">
-                                    <span class="h-2 w-2 rounded-full ${recipient.role === 'Client' ? 'bg-green-400' : 'bg-gray-400'} mr-1.5"></span>
-                                    ${conv.topic} - ${conv.projectId}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="text-sm text-gray-500 hidden sm:block">
-                            Role: <span class="font-semibold">${recipient.role}</span>
-                        </div>
-                    </div>
-
-                    <!-- Message Area -->
-                    <div id="message-area" class="flex-1 overflow-y-auto p-4 space-y-4 no-scrollbar">
-                        ${conv.messages.map(generateMessageBubbleHtml).join('')}
-                        <!-- Mock typing indicator -->
-                        <div class="flex justify-start mb-4">
-                            <div class="text-xs text-gray-500 italic">
-                                ${recipient.name} is typing...
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Message Input -->
-                    <div class="p-4 border-t bg-gray-50 sticky bottom-0 z-10">
-                        <form id="message-form" class="flex space-x-3">
-                            <input
-                                type="text"
-                                id="message-input"
-                                placeholder="Type your message here..."
-                                class="flex-1 p-3 border border-gray-300 rounded-xl focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                                aria-label="Message input"
-                            />
-                            <button
-                                type="submit"
-                                id="send-btn"
-                                class="p-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors shadow-md disabled:bg-indigo-300"
-                                title="Send Message"
-                                disabled
-                            >
-                                <!-- Send Icon SVG -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 12h12" />
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            `;
-            
-            // Attach event listeners after rendering
-            document.getElementById('back-to-list-btn').onclick = backToConversationList;
-            setupFormListeners(conv.id);
-
-            // Scroll to bottom
-            const messageArea = document.getElementById('message-area');
-            messageArea.scrollTop = messageArea.scrollHeight;
-        }
-
-        /**
-         * Renders the placeholder view when no conversation is selected.
-         */
-        function renderPlaceholder() {
-            const container = document.getElementById('chat-window-container');
-            container.classList.add('hidden'); // Ensure it's hidden on mobile
-            container.classList.remove('md:flex'); // Prepare for dynamic content removal
-
-            container.innerHTML = `
-                <div class="text-center p-8 text-gray-500 flex flex-col items-center justify-center h-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4 text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                    </svg>
-                    <h3 class="text-xl font-semibold">Select a Conversation</h3>
-                    <p class="mt-2 text-sm">Choose a client from the list to start chatting.</p>
-                </div>
-            `;
-            container.classList.add('md:flex');
-        }
-
-        // --- CORE LOGIC ---
-
-        /**
-         * Handles selecting a conversation.
-         */
-        function selectConversation(id) {
-            selectedConversationId = id;
-            
-            // Find the selected conversation data
-            const selectedConv = conversations.find(c => c.id === id);
-            if (!selectedConv) return;
-            
-            // Clear unread count for the selected conversation
-            selectedConv.unread = 0;
-
-            // 1. Render the new chat window
-            renderChatWindow(selectedConv);
-            
-            // 2. Manage mobile view toggle (hide list, show chat)
-            handleMobileView(true);
-
-            // 3. Re-render the list to update selected state and unread badge
-            renderConversationList(); 
-        }
-
-        /**
-         * Handles the back button on mobile.
-         */
-        function backToConversationList() {
-            selectedConversationId = null;
-            renderPlaceholder();
-            handleMobileView(false);
-        }
-
-        /**
-         * Toggles visibility of list vs chat window on mobile screens.
-         * @param {boolean} showChat - True to show chat, false to show list.
-         */
-        function handleMobileView(showChat) {
-            const list = document.getElementById('conversation-list');
-            const chat = document.getElementById('chat-window-container');
-            
-            if (window.innerWidth < 768) { // md breakpoint is 768px in Tailwind
-                if (showChat) {
-                    list.classList.add('hidden');
-                    chat.classList.remove('hidden');
-                } else {
-                    list.classList.remove('hidden');
-                    chat.classList.add('hidden');
-                    renderPlaceholder(); // Show the empty state when back on mobile
-                }
-            } else {
-                // On desktop, ensure both are visible
-                list.classList.remove('hidden');
-                chat.classList.remove('hidden');
-            }
-        }
-
-        /**
-         * Sets up listeners for the message input form.
-         */
-        function setupFormListeners(convId) {
-            const form = document.getElementById('message-form');
-            const input = document.getElementById('message-input');
-            const sendBtn = document.getElementById('send-btn');
-            
-            // Enable/disable send button based on input content
-            input.oninput = () => {
-                sendBtn.disabled = !input.value.trim();
-            };
-
-            // Handle form submission
-            form.onsubmit = (e) => {
-                e.preventDefault();
-                const text = input.value.trim();
-                if (text) {
-                    sendMessage(convId, text);
-                    input.value = ''; // Clear input
-                    sendBtn.disabled = true; // Disable button
-                }
-            };
-        }
-        
-        /**
-         * Simulates sending a message and updates the state.
-         */
-        function sendMessage(id, text) {
-            const now = new Date();
-            const hours = now.getHours();
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            const timeString = `${hours % 12 || 12}:${minutes} ${ampm}`;
-
-            const newMessage = {
-                senderId: 'current_user_id',
-                text: text,
-                time: timeString,
-            };
-
-            // Update conversation data
-            const convIndex = conversations.findIndex(c => c.id === id);
-            if (convIndex > -1) {
-                const updatedConv = {
-                    ...conversations[convIndex],
-                    messages: [...conversations[convIndex].messages, newMessage],
-                    lastMessage: text,
-                    lastTime: timeString,
-                    unread: 0,
-                };
-                
-                // Remove old, add new to the start to simulate sorting by most recent
-                conversations.splice(convIndex, 1);
-                conversations.unshift(updatedConv);
-                
-                // Re-render chat and list
-                renderChatWindow(updatedConv);
-                renderConversationList();
-            }
-        }
-
-        // --- INITIALIZATION ---
-        window.onload = function() {
-            renderConversationList();
-            renderPlaceholder();
-
-            // Handle window resize for dynamic responsiveness on desktop/mobile switch
-            window.addEventListener('resize', () => {
-                // If a conversation is selected, maintain the chat view on desktop,
-                // but switch to list view if resized to mobile
-                handleMobileView(selectedConversationId !== null);
-            });
-            
-            // Initial check for mobile view when the page loads
-            if (selectedConversationId !== null) {
-                handleMobileView(true);
-            } else {
-                handleMobileView(false);
-            }
-        };
-
+        });
     </script>
 </body>
+
 </html>
