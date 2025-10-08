@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - TaskNova</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styling for toggle switches to match the accent color */
+        .toggle-switch:checked {
+            background-color: var(--color-accent);
+        }
+        .toggle-switch {
+            transition: background-color 0.3s;
+        }
+        .toggle-switch + .toggle-switch-label {
+            /* Ensures the slider track uses the background color */
+            background-color: var(--color-slider-track); 
+        }
+        .toggle-switch:checked + .toggle-switch-label {
+            background-color: var(--color-accent);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen font-sans transition-colors duration-500">
+
+    <div id="app" class="p-4 sm:p-8 max-w-7xl mx-auto">
+
+        <header class="mb-8 border-b pb-4 transition-colors duration-500" id="main-header">
+            <div class="flex justify-between items-center">
+                <h1 class="text-3xl sm:text-4xl font-extrabold flex items-center text-[var(--color-text-primary)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                        class="mr-3 text-[var(--color-accent)]">
+                        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.75 1.3a2 2 0 0 0 .73 2.73l.15.08a2 2 0 0 1 1 1.73v.18a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.75-1.3a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    Account Settings
+                </h1>
+                <button id="theme-toggle-btn"
+                    class="p-2 rounded-full transition-colors duration-300 hover:bg-[var(--color-bg-hover)]">
+                    </button>
+            </div>
+            <p class="mt-1 text-[var(--color-text-subtle)]">Manage your profile information, security, and preferences.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+            <aside class="lg:col-span-1 space-y-4 h-fit sticky top-4">
+                <nav class="bg-[var(--color-bg-secondary)] p-4 rounded-xl shadow-lg border border-[var(--color-border)]">
+                    <ul class="space-y-2 text-[var(--color-text-primary)] font-medium">
+                        <li><a href="#general" class="block p-3 rounded-lg text-[var(--color-accent)] bg-[var(--color-bg-hover)] transition-colors duration-200">General</a></li>
+                        <li><a href="#profile" class="block p-3 rounded-lg hover:bg-[var(--color-bg-hover)] transition-colors duration-200">Profile Details</a></li>
+                        <li><a href="#security" class="block p-3 rounded-lg hover:bg-[var(--color-bg-hover)] transition-colors duration-200">Security</a></li>
+                        <li><a href="#notifications" class="block p-3 rounded-lg hover:bg-[var(--color-bg-hover)] transition-colors duration-200">Notifications</a></li>
+                        <li><a href="#billing" class="block p-3 rounded-lg hover:bg-[var(--color-bg-hover)] transition-colors duration-200">Billing</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="lg:col-span-3 space-y-12">
+
+                <section id="general" class="bg-[var(--color-bg-secondary)] p-6 rounded-xl shadow-lg border border-[var(--color-border)]">
+                    <h2 class="text-2xl font-bold mb-6 border-b border-[var(--color-border)] pb-3 text-[var(--color-text-primary)]">General Settings</h2>
+                    <form class="space-y-6">
+                        
+                        <div>
+                            <label for="display-name" class="block text-sm font-medium mb-2 text-[var(--color-text-primary)]">Display Name</label>
+                            <input type="text" id="display-name" value="Jane Doe"
+                                class="w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-[var(--color-accent)] bg-[var(--color-input-bg)] border border-[var(--color-input-border)] text-[var(--color-text-primary)]">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2 text-[var(--color-text-primary)]">Email Address</label>
+                            <input type="email" id="email" value="jane.doe@example.com" disabled
+                                class="w-full px-4 py-2 rounded-lg bg-[var(--color-bg-hover)] border border-[var(--color-input-border)] text-[var(--color-text-subtle)] cursor-not-allowed">
+                            <p class="mt-1 text-xs text-blue-500">Contact support to change your email.</p>
+                        </div>
+                        
+                        <div class="pt-4 border-t border-[var(--color-border)]">
+                            <button type="submit" class="px-6 py-2 rounded-lg font-bold bg-[var(--color-accent)] text-[var(--color-accent-text)] hover:opacity-90 transition-opacity">
+                                Save General Changes
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <section id="profile" class="bg-[var(--color-bg-secondary)] p-6 rounded-xl shadow-lg border border-[var(--color-border)]">
+                    <h2 class="text-2xl font-bold mb-6 border-b border-[var(--color-border)] pb-3 text-[var(--color-text-primary)]">Profile Details</h2>
+                    <form class="space-y-6">
+                        
+                        <div>
+                            <label for="bio" class="block text-sm font-medium mb-2 text-[var(--color-text-primary)]">Bio/Professional Summary</label>
+                            <textarea id="bio" rows="4"
+                                class="w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-[var(--color-accent)] bg-[var(--color-input-bg)] border border-[var(--color-input-border)] text-[var(--color-text-primary)]">Highly motivated and detail-oriented Senior Web Developer...</textarea>
+                        </div>
+
+                        <div>
+                            <label for="tags" class="block text-sm font-medium mb-2 text-[var(--color-text-primary)]">Skills/Tags (Comma Separated)</label>
+                            <input type="text" id="tags" value="React, Tailwind CSS, Node.js, UI/UX"
+                                class="w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-[var(--color-accent)] bg-[var(--color-input-bg)] border border-[var(--color-input-border)] text-[var(--color-text-primary)]">
+                        </div>
+
+                        <div class="pt-4 border-t border-[var(--color-border)]">
+                            <button type="submit" class="px-6 py-2 rounded-lg font-bold bg-[var(--color-accent)] text-[var(--color-accent-text)] hover:opacity-90 transition-opacity">
+                                Update Profile
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                
+                <section id="security" class="bg-[var(--color-bg-secondary)] p-6 rounded-xl shadow-lg border border-[var(--color-border)]">
+                    <h2 class="text-2xl font-bold mb-6 border-b border-[var(--color-border)] pb-3 text-[var(--color-text-primary)]">Security</h2>
+                    <form class="space-y-6">
+                        
+                        <div>
+                            <label for="password" class="block text-sm font-medium mb-2 text-[var(--color-text-primary)]">Change Password</label>
+                            <input type="password" id="password" placeholder="New Password"
+                                class="w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-[var(--color-accent)] bg-[var(--color-input-bg)] border border-[var(--color-input-border)] text-[var(--color-text-primary)]">
+                        </div>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-[var(--color-border)]">
+                            <div class="text-[var(--color-text-primary)]">
+                                <p class="font-medium">Two-Factor Authentication (2FA)</p>
+                                <p class="text-sm text-[var(--color-text-subtle)]">Add an extra layer of security to your account.</p>
+                            </div>
+                            <label for="2fa-toggle" class="flex items-center cursor-pointer">
+                                <div class="relative">
+                                    <input type="checkbox" id="2fa-toggle" class="sr-only toggle-switch" checked>
+                                    <div class="block w-14 h-8 rounded-full toggle-switch-label"></div>
+                                    <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="pt-4 border-t border-[var(--color-border)]">
+                            <button type="submit" class="px-6 py-2 rounded-lg font-bold bg-[var(--color-accent)] text-[var(--color-accent-text)] hover:opacity-90 transition-opacity">
+                                Update Security
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                
+                <section id="notifications" class="bg-[var(--color-bg-secondary)] p-6 rounded-xl shadow-lg border border-[var(--color-border)]">
+                    <h2 class="text-2xl font-bold mb-6 border-b border-[var(--color-border)] pb-3 text-[var(--color-text-primary)]">Notification Preferences</h2>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center justify-between pb-3 border-b border-[var(--color-border)]">
+                            <div class="text-[var(--color-text-primary)]">
+                                <p class="font-medium">Email when proposal is viewed</p>
+                                <p class="text-sm text-[var(--color-text-subtle)]">Get an alert when a client reviews your application.</p>
+                            </div>
+                            <label for="notify-proposal" class="flex items-center cursor-pointer">
+                                <div class="relative">
+                                    <input type="checkbox" id="notify-proposal" class="sr-only toggle-switch" checked>
+                                    <div class="block w-14 h-8 rounded-full toggle-switch-label"></div>
+                                    <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="flex items-center justify-between pb-3 border-b border-[var(--color-border)]">
+                            <div class="text-[var(--color-text-primary)]">
+                                <p class="font-medium">Platform message on new rating</p>
+                                <p class="text-sm text-[var(--color-text-subtle)]">Receive a notification when a client leaves a review.</p>
+                            </div>
+                            <label for="notify-rating" class="flex items-center cursor-pointer">
+                                <div class="relative">
+                                    <input type="checkbox" id="notify-rating" class="sr-only toggle-switch">
+                                    <div class="block w-14 h-8 rounded-full toggle-switch-label"></div>
+                                    <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section id="billing" class="bg-[var(--color-bg-secondary)] p-6 rounded-xl shadow-lg border border-[var(--color-border)]">
+                    <h2 class="text-2xl font-bold mb-6 border-b border-[var(--color-border)] pb-3 text-[var(--color-text-primary)]">Billing & Payments</h2>
+                    <p class="text-[var(--color-text-subtle)] mb-4">You currently use **Bank Transfer** as your primary payment method.</p>
+                    <button class="px-6 py-2 rounded-lg font-bold border border-red-500 text-red-500 hover:bg-red-500/10 transition-colors">
+                        Manage Payment Methods
+                    </button>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="data.js"></script>
+    <script src="marketplace.js"></script>
+</body>
+
+</html>
