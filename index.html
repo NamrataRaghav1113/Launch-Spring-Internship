@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskNova - Home Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Optional: Smooth scroll for internal links */
         html {
             scroll-behavior: smooth;
         }
+
         /* Adjust for fixed navigation to prevent content overlap */
         section {
             padding-top: 100px;
         }
+
         /* Hero section needs full viewport height adjustment */
         .hero-section {
-            min-height: calc(100vh - 80px); /* Adjust based on header height */
+            min-height: calc(100vh - 80px);
+            /* Adjust based on header height */
         }
     </style>
 </head>
@@ -26,8 +29,9 @@
 <body class="min-h-screen font-sans transition-colors duration-500">
 
     <div id="app" class="max-w-7xl mx-auto">
-        
-        <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-colors duration-500 
+
+        <nav id="main-nav"
+            class="fixed top-0 left-0 w-full z-50 transition-colors duration-500 
                                 bg-[var(--color-bg-secondary)] border-b border-[var(--color-border)] shadow-lg p-4 sm:p-6">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
                 <a href="index.html" class="text-2xl font-extrabold flex items-center text-[var(--color-text-primary)]">
@@ -39,15 +43,17 @@
                     </svg>
                     TaskNova
                 </a>
-                
+
                 <ul class="flex space-x-6 items-center text-[var(--color-text-primary)] text-sm font-medium">
                     <li><a href="index.html" class="text-[var(--color-accent)] font-bold">Home</a></li>
-                    <li><a href="marketplace.html" class="hover:text-[var(--color-accent)] transition-colors duration-200">Projects</a></li>
-                    <li><a href="freelancer-dashboard.html" class="hover:text-[var(--color-accent)] transition-colors duration-200">Dashboard</a></li>
+                    <li><a href="marketplace.html"
+                            class="hover:text-[var(--color-accent)] transition-colors duration-200">Projects</a></li>
+                    <li><a href="freelancer-dashboard.html"
+                            class="hover:text-[var(--color-accent)] transition-colors duration-200">Dashboard</a></li>
                     <li>
                         <button id="theme-toggle-btn"
                             class="p-2 rounded-full transition-colors duration-300 hover:bg-[var(--color-bg-hover)]">
-                            </button>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -63,11 +69,13 @@
                     Find the perfect project or the right talent, focusing on simplicity and efficiency.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="marketplace.html" class="px-8 py-3 rounded-lg font-bold text-lg 
+                    <a href="marketplace.html"
+                        class="px-8 py-3 rounded-lg font-bold text-lg 
                             bg-[var(--color-accent)] text-[var(--color-accent-text)] hover:opacity-90 transition-opacity shadow-xl">
                         Browse Projects
                     </a>
-                    <a href="#" class="px-8 py-3 rounded-lg font-bold text-lg 
+                    <a href="#"
+                        class="px-8 py-3 rounded-lg font-bold text-lg 
                             bg-white text-gray-900 border border-gray-300 hover:bg-gray-100 transition-colors shadow-xl">
                         Become a Freelancer
                     </a>
@@ -81,48 +89,73 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                
-                <div class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 text-[var(--color-accent)]"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+
+                <div
+                    class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="mx-auto mb-4 text-[var(--color-accent)]">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                        <line x1="4" x2="4" y1="22" y2="15" />
+                    </svg>
                     <h3 class="text-xl font-semibold mb-3 text-[var(--color-text-primary)]">Streamlined Workflow</h3>
-                    [cite_start]<p class="text-[var(--color-text-subtle)]">Our intuitive dashboards simplify project management and proposal tracking, as noted in the project goal[cite: 7].</p>
-                </div>
-                
-                <div class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 text-[var(--color-accent)]"><path d="M12 5V2L7 7l5 5V9"/><path d="M12 19v3l5-5-5-5v4"/></svg>
-                    <h3 class="text-xl font-semibold mb-3 text-[var(--color-text-primary)]">No Overwhelm</h3>
-                    [cite_start]<p class="text-[var(--color-text-subtle)]">Designed to avoid the complexity of existing platforms, focusing on an engaging UI/UX[cite: 5, 7].</p>
+                    [cite_start]<p class="text-[var(--color-text-subtle)]">Our intuitive dashboards simplify project
+                        management and proposal tracking, as noted in the project goal[cite: 7].</p>
                 </div>
 
-                <div class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 text-[var(--color-accent)]"><path d="M22 10s-5.4-4-10-4-10 4-10 4-1.6 7 10 7 10-7 10-7Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div
+                    class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="mx-auto mb-4 text-[var(--color-accent)]">
+                        <path d="M12 5V2L7 7l5 5V9" />
+                        <path d="M12 19v3l5-5-5-5v4" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-3 text-[var(--color-text-primary)]">No Overwhelm</h3>
+                    [cite_start]<p class="text-[var(--color-text-subtle)]">Designed to avoid the complexity of existing
+                        platforms, focusing on an engaging UI/UX[cite: 5, 7].</p>
+                </div>
+
+                <div
+                    class="p-6 rounded-xl shadow-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] text-center transition-transform duration-300 hover:scale-[1.03]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="mx-auto mb-4 text-[var(--color-accent)]">
+                        <path d="M22 10s-5.4-4-10-4-10 4-10 4-1.6 7 10 7 10-7 10-7Z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
                     <h3 class="text-xl font-semibold mb-3 text-[var(--color-text-primary)]">Role-Based Experience</h3>
-                    [cite_start]<p class="text-[var(--color-text-subtle)]">Dedicated dashboards for Clients and Freelancers ensure relevant project management tools[cite: 7, 19].</p>
+                    [cite_start]<p class="text-[var(--color-text-subtle)]">Dedicated dashboards for Clients and
+                        Freelancers ensure relevant project management tools[cite: 7, 19].</p>
                 </div>
             </div>
         </section>
 
-        <footer id="contact" class="p-8 sm:p-16 text-center bg-[var(--color-bg-secondary)] border-t border-[var(--color-border)]">
+        <footer id="contact"
+            class="p-8 sm:p-16 text-center bg-[var(--color-bg-secondary)] border-t border-[var(--color-border)]">
             <h2 class="text-3xl font-bold mb-4 text-[var(--color-text-primary)]">Ready to Get Started?</h2>
-            <p class="text-lg mb-8 text-[var(--color-text-subtle)]">Join the TaskNova community today and move closer to your project goals.</p>
-            
+            <p class="text-lg mb-8 text-[var(--color-text-subtle)]">Join the TaskNova community today and move closer to
+                your project goals.</p>
+
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="marketplace.html" class="px-8 py-3 rounded-lg font-bold text-lg 
+                <a href="marketplace.html"
+                    class="px-8 py-3 rounded-lg font-bold text-lg 
                         bg-[var(--color-accent)] text-[var(--color-accent-text)] hover:opacity-90 transition-opacity shadow-xl">
                     Find Work Now
                 </a>
-                <a href="#" class="px-8 py-3 rounded-lg font-bold text-lg 
+                <a href="#"
+                    class="px-8 py-3 rounded-lg font-bold text-lg 
                         border border-[var(--color-input-border)] text-[var(--color-text-primary)] hover:bg-[var(--color-bg-hover)] transition-colors">
                     Register Client Account
                 </a>
             </div>
-            
+
             <p class="mt-16 text-sm text-[var(--color-text-subtle)]">&copy; 2025 TaskNova. All rights reserved.</p>
         </footer>
 
     </div>
 
-    <script src="config.js"></script> 
+    <script src="config.js"></script>
     <script src="data.js"></script>
     <script src="marketplace.js"></script>
 
@@ -130,11 +163,12 @@
         // Simple JS to ensure the theme toggle initializes correctly on the home page
         // The main initialize() function in marketplace.js should handle theme application.
         window.addEventListener('load', () => {
-             // Re-initialize if marketplace.js doesn't auto-run or if you use a different script for the home page
-             if (typeof initialize === 'function') {
-                 initialize();
-             }
+            // Re-initialize if marketplace.js doesn't auto-run or if you use a different script for the home page
+            if (typeof initialize === 'function') {
+                initialize();
+            }
         });
     </script>
 </body>
+
 </html>
